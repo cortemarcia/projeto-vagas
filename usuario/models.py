@@ -15,6 +15,10 @@ class Pessoa(models.Model):
   telefone = models.CharField(max_length=255, verbose_name='Telefone')
   genero = models.CharField(max_length=255, verbose_name='Gênero', choices=GENEROS)
   ativo = models.BooleanField(default=True)
+  area_de_interesse = models.CharField(max_length=255)
+  experiencia = models.BooleanField(default=True)
+
+
 
   def __str__(self):
     return self.nome

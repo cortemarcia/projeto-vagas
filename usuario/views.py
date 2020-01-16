@@ -1,16 +1,11 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from .models import *
 from usuario.forms import PessoaForm
 
 # Create your views here.
-=======
-from .models import Pessoa
->>>>>>> 5f99d31c911f33de409b837568c6084c949967be
 
 
 def mostrar_formulario_cadastro(request):
-<<<<<<< HEAD
   # args = {'msg': ''}
   # if request == 'POST':
   #   pessoa = Pessoa()
@@ -37,19 +32,6 @@ def mostrar_formulario_cadastro(request):
 
   return render(request, 'cadastrar_pessoa.html', args)
 
-=======
-  args = {'msg': ''}
-  if request.method == 'POST':
-    pessoa = Pessoa()
-    pessoa.nome = request.POST.get('nome')
-    pessoa.cpf = request.POST.get('cpf')
-    pessoa.email = request.POST.get('email')
-    pessoa.telefone = request.POST.get('telefone')
-    pessoa.genero = request.POST.get('genero')
-    pessoa.save()
-    return render(request, 'login.html')
-  return render(request, 'cadastrar_pessoa.html', args)
->>>>>>> 5f99d31c911f33de409b837568c6084c949967be
 
 def mostrar_pessoas(request):
   pessoas = Pessoa.objects.all()
