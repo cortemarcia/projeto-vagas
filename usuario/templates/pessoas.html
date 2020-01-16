@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block body %}
-
 <h4>Pessoas</h4>
-
-
+{% for pessoa in dados %}
   <div>
     <p>Nome: {{pessoa.nome}}</p>
     <p>CPF: {{pessoa.cpf}}</p>
   </div>
   <hr>
+<<<<<<< HEAD
   {% endblock body %}
+=======
+{% endfor %}
+{% endblock %}
+>>>>>>> 5f99d31c911f33de409b837568c6084c949967be

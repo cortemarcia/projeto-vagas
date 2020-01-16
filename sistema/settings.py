@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuario',
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5f99d31c911f33de409b837568c6084c949967be
 ]
 
 MIDDLEWARE = [
@@ -120,3 +123,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+APPEND_SLASH=False
