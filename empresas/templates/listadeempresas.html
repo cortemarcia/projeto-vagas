@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body%}
+
+{% for empresa in lista_empresas %}
+<h4>{{empresa.nome}}</h4>
+<p>{{empresa.cnpj}}</p>
+<p>Endereco: {{empresa.endereco}}</p>
+<a href="/empresa/{{empresa.pk}}"><button>Detalhes da Empresa</button></a>
+
+{% endfor %}
+{% endblock body %}
