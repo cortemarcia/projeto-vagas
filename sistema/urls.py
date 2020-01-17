@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from usuario.views import *
+from import.empresas.urls
 
 urlpatterns = [
+    path('empresa/', include('empresa.urls')),
     path('cadastro/',mostrar_formulario_cadastro),
     path('lista/',mostrar_pessoas),
     path('login/', include('django.contrib.auth.urls')),
