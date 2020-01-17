@@ -9,6 +9,12 @@ class Pessoa(models.Model):
     ('NB', 'Não-binário'),
     ('O', 'Outros'),
   )
+
+  areas= (
+    ('S', 'Saúde'),
+    ('A', 'Assistência Social'),
+    ('O', 'Outros'),)
+  
   nome = models.CharField(max_length=255, verbose_name='Nome')
   data_de_nasc = models.CharField(max_length=12)
   cpf = models.CharField(max_length=255, verbose_name='CPF')
@@ -16,7 +22,8 @@ class Pessoa(models.Model):
   telefone = models.CharField(max_length=255, verbose_name='Telefone')
   genero = models.CharField(max_length=255, verbose_name='Gênero', choices=GENEROS)
   ativo = models.BooleanField(default=True)
-  area_de_interesse = models.CharField(max_length=255)
+  
+  area_de_interesse = models.CharField(max_length=255, verbose_name='àrea_de_interesse',choices=areas)
   experiencia = models.BooleanField(default=True)
 
 
