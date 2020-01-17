@@ -8,7 +8,7 @@ def home(request):
 
 def cadastrar_empresa(request):
     
-    form = EscolaForm(request.POST or None)
+    form = EmpresaForm(request.POST or None)
     if form.is_valid():
         form.save()
         args = {
@@ -20,8 +20,8 @@ def cadastrar_empresa(request):
     return render(request, 'cadastro.html', args)
 
 def lista_empresas(request):
-     lista_empresa = Aluno.objects.filter().all()
-     args = {'lista_empresa':lista_empresa}
+     lista_empresas = Empresa.objects.filter().all()
+     args = {'lista_empresas':lista_empresas}
      return render(request, 'listadeempresas.html',args)
 
 def detalhes_empresa(request, id):

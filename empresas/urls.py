@@ -4,9 +4,9 @@ from empresas.views import *
 urlpatterns = [
     path('',home),
     path('cadastro/', cadastrar_empresa),
-    path ('lista/empresa/', lista_empresas),
-    path ('empresa/<int:id>', detalhes_empresa),
-    path('update/<int:id>', atualizar_empresa),
-    path('delete/<int:id>', deletar_empresa),
+    path ('lista/', lista_empresas),
+    path ('descricao/<int:id>', detalhes_empresa),
+    path('atualizar/<int:id>', atualizar_empresa),
+    path('deletar/<int:id>', deletar_empresa),
     
 ]
