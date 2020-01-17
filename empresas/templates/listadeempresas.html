@@ -6,7 +6,10 @@
 <h4>{{empresa.nome}}</h4>
 <p>{{empresa.cnpj}}</p>
 <p>Endereco: {{empresa.endereco}}</p>
-<a href="/empresa/{{empresa.pk}}"><button>Detalhes da Empresa</button></a>
+<p>Cargo: {{empresa.cargo}}</p>
+<p>Descrição: {{empresa.descricao_da_vaga}}</p>
+<a href="/descricao/{{empresa.pk}}"><button>Detalhes da Empresa</button></a>
+
 
 {% endfor %}
 {% endblock body %}

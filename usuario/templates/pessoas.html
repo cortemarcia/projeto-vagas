@@ -2,11 +2,11 @@
 {% block body %}
 <h4>Pessoas</h4>
 {% for pessoa in dados %}
-  <div>
-    <p>Nome: {{pessoa.nome}}</p>
-    <p>CPF: {{pessoa.cpf}}</p>
-  </div>
-  <hr>
-  {% endblock body %}
+<div>
+  <p>Nome: {{pessoa.nome}}</p>
+  <p>CPF: {{pessoa.cpf}}</p>
+</div>
+<hr>
+
 {% endfor %}
-{% endblock %}
+{% endblock body %}

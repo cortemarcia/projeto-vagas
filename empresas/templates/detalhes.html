@@ -2,13 +2,15 @@
 
 {% block body%}
 
-    <h3>{{empresa.nome}}</h3>
-    <p>{{empresa.cnpj}}anos </p>
-    <p>Endereço:{{aluno.endereco}}</p>
+<h3>{{empresa.nome}}</h3>
+<p>{{empresa.cnpj}}anos </p>
+<p>Endereço:{{empresa.endereco}}</p>
+<p>Cargo: {{empresa.cargo}}</p>
+<p>Descrição: {{empresa.descricao_da_vaga}}</p>
 
 
-    <a href="/atualizar/empresa/{{empresa.pk}}"><button>Atualizar Cadastro</button></a>
-    <a href="/deletar/empresa/{{empresa.pk}}"><button>Deletar Empresa</button></a>
-    <h2>{{msg}}</h2>
+<a href="atualizar/{{empresa.pk}}"><button>Atualizar Cadastro</button></a>
+<a href="deletar/{{empresa.pk}}"><button>Deletar Empresa</button></a>
+<h2>{{msg}}</h2>
 
 {% endblock body %}
