@@ -2,26 +2,15 @@ from django.db import models
 
 # Create your models here.
 class Empresa(models.Model):
-  GENEROS = (
-    ('M', 'Masculino'),
-    ('F', 'Feminino'),
-    ('NB', 'Não-binário'),
-    ('O', 'Outros'),
-  )
+  
   nome = models.CharField(max_length=255, verbose_name='Nome')
-  cpf = models.CharField(max_length=255, verbose_name='CPF')
+  endereco= models.CharField(max_length=255)
+  cnpj = models.CharField(max_length=255, verbose_name='CPF')
+  telefone= models.CharField(max_length=255)
   email = models.EmailField(max_length=255, verbose_name='E-mail')
-  telefone = models.CharField(max_length=255, verbose_name='Telefone')
-  genero = models.CharField(max_length=255, verbose_name='Gênero', choices=GENEROS)
-  ativo = models.BooleanField(default=True)
+  quantidade_de_vagas= models.IntegerField()
+  cargo= models.CharField(max_length=255)
+  descricao_da_vaga= models.CharField(max_length=255)
 
   def __str__(self):
     return self.nome
-nome:
-endereco:
-cnpj:
-telefone:
-email:
-quantidade_de_vagas:
-cargo:
-descricao_da_vaga:
