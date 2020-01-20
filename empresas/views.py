@@ -2,7 +2,11 @@ from django.shortcuts import render
 from empresas.models import *
 from empresas.forms import EmpresaForm
 # Create your views here.
+<<<<<<< HEAD
 
+=======
+# teste:
+>>>>>>> 6b77e7a576968912e0fc6ffb54681d7d5a4a77c2
 
 def home(request):
     return render(request,'base.html')
