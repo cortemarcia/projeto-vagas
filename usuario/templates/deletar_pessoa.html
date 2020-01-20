@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h3>{{pessoa.nome}}</h3>
+    <p>{{pessoa.data_de_nasc}} anos</p>
+    <p>Genero {{pessoa.genero}}</p>
+    <p>Endereço: {{pessoa.endereco}}</p>
+    <p>Telefone de contato: {{pessoa.telefone_contato}}</p>
+    <p>cpf: {{pessoa.cpf}}/p>
+        <p>ativo: {{pessoa.ativo}}/p>
+            <p>area_de_interesse: {{pessoa.area_de_interesse}
+    <!-- <a href="/atualizar/pessoa/{{pessoa.pk}}"><button>Atualizar Cadastro</button></a> -->
+    <a href="/deletar/pessoa/{{pessoa.pk}}"><button style="background-color: brown;">Deletar Pessoa</button></a>
+    {% if msg%}
+        <h2>{{msg}}</h2>
+    {% endif %}
+{% endblock body %}

@@ -6,19 +6,7 @@ from usuario.forms import PessoaForm
 
 
 def mostrar_formulario_cadastro(request):
-  # args = {'msg': ''}
-  # if request == 'POST':
-  #   pessoa = Pessoa()
-  #   pessoa.nome = request.POST.get('nome')
-  #   pessoa.cpf = request.POST.get('cpf')
-  #   pessoa.email = request.POST.get('email')
-  #   pessoa.telefone = request.POST.get('telefone')
-  #   pessoa.genero = request.POST.get('genero')
-  #   pessoa.save
-  #   return render(request, 'login.html')
-  # return render(request, 'cadastrar_pessoa.html', args)
-
-  form = PessoaForm(request.POST or None)
+   form = PessoaForm(request.POST or None)
   if form.is_valid():
      form.save()
      return redirect('/login', kwargs={'msg':'Cadastrado com sucesso'})
@@ -41,8 +29,35 @@ def login(request):
   if request.method == 'POST':
     email_formulario = request.POST.get('email')
     pessoa_banco_dados = Pessoa.objects.filter(email=email_formulario).first()
-    if pessoa_banco_dados is not None:
+    if pessoa_banco_dados is not 
+    :
       return mostrar_pessoas(request)
-    return render(request, 'login.html', {'msg': 'Ops, não encontramos'})
+    return render(request, 'login.html', {'msg': 'Ops, não encontramos'}) 
 
   return render(request, 'login.html', {'msg': 'seja bem vindo'})
+
+  def atualizar_pessoa(request, id):
+    pessoa = Pessoa.objects.get(pk=id)
+
+    form = PessoaForm(request.POST or None, instance=pessoa)
+
+    
+    args = {'form':form}
+    
+    if form.is_valid():
+        form.save()
+        args = {
+            'msg':'Cadastro atulizado com sucesso'
+        }
+    return render(request, 'atualizarpessoa.html', args)
+
+def deletar_pessoa(request, id):
+    pessoa = pessoa.objects.get(pk=id)
+
+    pessoa.delete()
+
+    args = {
+        'msg':'a pessoa foi deletada com sucesso',
+        pessoa':pessoa
+        }
+    return render(request, 'deletar_pessoa.html', args)
